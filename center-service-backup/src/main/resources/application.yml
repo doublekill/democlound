@@ -1,5 +1,5 @@
 server:
-  port: 7777
+  port: 2017
 spring:
   application:
     name: servercenter
@@ -7,11 +7,10 @@ eureka:
   instance:
     hostname: backup
   client:
-    # ±íÊ¾ÊÇ·ñ×¢²á×ÔÉíµ½eureka·şÎñÆ÷
-    registerWithEureka: true
-    # ÊÇ·ñ´ÓeurekaÉÏ»ñÈ¡×¢²áĞÅÏ¢
-    fetchRegistry: true
-    serviceUrl: #Èç¹ûÊÇ¶àÖ÷»ú¼¯ÈºportÒ»Ñù£¬ÓÃhostnameÇø·Ö£¬Èç¹ûÔÚÒ»Ì¨Ö÷»úÄ£Äâ£¬ÓÃhostnameºÍportÇø·Ö
-      defaultZone: http://master:8888/eureka/
-  server:
+    registerWithEureka: true # è¡¨ç¤ºæ˜¯å¦æ³¨å†Œè‡ªèº«åˆ°eurekaæœåŠ¡å™¨
+    fetchRegistry: false # æ˜¯å¦ä»eurekaä¸Šè·å–æ³¨å†Œä¿¡æ¯
+    serviceUrl: #å¦‚æœæ˜¯å¤šä¸»æœºé›†ç¾¤portä¸€æ ·ï¼Œç”¨hostnameåŒºåˆ†ï¼Œå¦‚æœåœ¨ä¸€å°ä¸»æœºæ¨¡æ‹Ÿï¼Œhostnameä¸€æ ·ç”¨portåŒºåˆ†
+      defaultZone: http://master:2018/eureka/
+  server: #å…³é—­è‡ªæˆ‘ä¿æŠ¤
     enable-self-preservation: false
+#    evictionIntervalTimerInMs: 4000 #æ¸…ç†é—´éš”,å•ä½æ¯«ç§’

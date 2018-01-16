@@ -9,7 +9,8 @@ spring:
 eureka:
   instance:
     hostname: localhost
-    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 1 #租期更新时间间隔
+    leaseExpirationDurationInSeconds: 3 #租期到期时间
   client:
     service-url:
-      defaultZone: http://master:8888/eureka/
+      defaultZone: http://master:2018/eureka/

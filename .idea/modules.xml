@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/book/book.iml" filepath="$PROJECT_DIR$/book/book.iml" />
       <module fileurl="file://$PROJECT_DIR$/center-service/center-service.iml" filepath="$PROJECT_DIR$/center-service/center-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/center-service-backup/center-service-backup.iml" filepath="$PROJECT_DIR$/center-service-backup/center-service-backup.iml" />
       <module fileurl="file://$PROJECT_DIR$/democlound.iml" filepath="$PROJECT_DIR$/democlound.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello/hello.iml" filepath="$PROJECT_DIR$/hello/hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provider-service/provider-service.iml" filepath="$PROJECT_DIR$/provider-service/provider-service.iml" />
     </modules>
   </component>
 </project>

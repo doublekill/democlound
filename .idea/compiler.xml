@@ -6,15 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="book" />
         <module name="center-service" />
         <module name="center-service-backup" />
         <module name="democlound" />
+        <module name="hello" />
+        <module name="provider-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="book" target="1.8" />
       <module name="center-service" target="1.8" />
       <module name="center-service-backup" target="1.8" />
       <module name="democlound" target="1.5" />
+      <module name="hello" target="1.8" />
+      <module name="provider-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
