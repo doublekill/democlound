@@ -1,0 +1,19 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: servercenter
+eureka:
+  instance:
+    hostname: master
+
+  client: # 表示是否注册自身到eureka服务器
+    registerWithEureka: true
+    fetchRegistry: true # 是否从eureka上获取注册信息
+
+    serviceUrl: #如果是多主机集群port一样，用hostname区分，如果在一台主机模拟，hostname一样用port区分
+      defaultZone: http://backup:7777/eureka/
+
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
