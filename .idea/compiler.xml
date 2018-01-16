@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="center-service" />
+        <module name="center-service-backup" />
         <module name="democlound" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="center-service" target="1.8" />
+      <module name="center-service-backup" target="1.8" />
       <module name="democlound" target="1.5" />
     </bytecodeTargetLevel>
   </component>

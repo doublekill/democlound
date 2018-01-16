@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/center-service/center-service.iml" filepath="$PROJECT_DIR$/center-service/center-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/center-service-backup/center-service-backup.iml" filepath="$PROJECT_DIR$/center-service-backup/center-service-backup.iml" />
       <module fileurl="file://$PROJECT_DIR$/democlound.iml" filepath="$PROJECT_DIR$/democlound.iml" />
     </modules>
   </component>
