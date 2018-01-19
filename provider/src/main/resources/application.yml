@@ -1,0 +1,41 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: provider
+  thymeleaf:
+    cache: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=true
+#    jdbc:mysql://juniuo.crjf2p1tdwz3.rds.cn-north-1.amazonaws.com.cn:3306/juniuo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: admin
+  jpa:
+    show-sql: true #运行时打印SQL语句
+    database: mysql
+    hibernate:
+      ddl-auto: update
+#      create每次启动都会删除以前的重新创建，
+
+eureka:
+  instance:
+    hostname: localhost
+#    leaseRenewalIntervalInSeconds: 1 #租期更新时间间隔
+#    leaseExpirationDurationInSeconds: 1 #租期到期时间
+  client:
+      service-url:
+        defaultZone: http://master:2018/eureka/
+
+#eureka:
+#  register-url:
+#  instance:
+#    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 5
+#  client:
+#    registry-fetch-interval-seconds: 2
+#    service-url:
+#      defaultZone: http://127.0.0.1:8080/eureka/
+#      defaultZone: http://59.110.6.168:8000/eureka/ # 集群？
+#logging:
+#  config: classpath:log4j2.xml

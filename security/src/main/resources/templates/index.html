@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>玩转spring boot——简单登录认证</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>登录认证的主页</h1>
+<h4>
+    <a href="/hello">来自一条神秘的链接！</a>
+</h4>
+<!--<h1 th:text="'登录用户：' + ${msg.errorInfo}"></h1>-->
+<div class="starter-template">
+    <h1 th:text="${msg.errorCode}"></h1>
+    <p class="bg-primary" th:text="${msg.errorInfo}"></p>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <p class="bg-info" th:text="${msg.data}"></p>
+    </div>
+    <div sec:authorize="hasRole('ROLE_USER')">
+        <p class="bg-info">无更多显示信息</p>
+    </div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" class="btn btn-primary" value="注销"/>
+    </form>
+</div>
+
+</body>
+</html>

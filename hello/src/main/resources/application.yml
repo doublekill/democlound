@@ -10,7 +10,7 @@ eureka:
   instance:
     hostname: localhost
     leaseRenewalIntervalInSeconds: 1 #租期更新时间间隔
-    leaseExpirationDurationInSeconds: 3 #租期到期时间
+    leaseExpirationDurationInSeconds: 1 #租期到期时间
   client:
     service-url:
       defaultZone: http://master:2018/eureka/

@@ -26,8 +26,10 @@ import java.util.List;
  ******************************************/
 @RestController
 public class BookController {
-    @Autowired private BookService bookService;
-    @Autowired private ProviderFeign providerFeign;
+    @Autowired
+    private BookService bookService;
+    @Autowired
+    ProviderFeign providerFeign;
 
     @GetMapping(value = "/findAll")
     @ApiOperation(value = "均衡调用",response = Result.class)

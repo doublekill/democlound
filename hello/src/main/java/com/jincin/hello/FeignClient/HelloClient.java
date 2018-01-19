@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient("Provider")
 public interface HelloClient {
-
         @RequestMapping(value = "/findAll",method = RequestMethod.GET)
         Result findAll();
 //        Result findOne(@PathVariable(value = "userId") int userId);

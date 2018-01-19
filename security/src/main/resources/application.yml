@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: safe
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=true
+#    jdbc:mysql://juniuo.crjf2p1tdwz3.rds.cn-north-1.amazonaws.com.cn:3306/juniuo?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+    username: root
+    password: admin
+  jpa:
+    show-sql: true #运行时打印SQL语句
+    database: mysql
+    hibernate:
+      ddl-auto: update #create
