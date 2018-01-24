@@ -34,9 +34,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/*.css").permitAll()
-                .antMatchers("/").authenticated()
-                //登陆后之后拥有“ADMIN”权限才可以访问/index ，否则系统会出现“403”权限不足的提示
-                .antMatchers("/hello").hasRole("USER")
+                .antMatchers("/hello").hasRole("ADMIN")
+                .antMatchers("/*").authenticated()
+                //登陆后之后拥有“ADMIN”权限才可以访问/hello ，否则系统会出现“403”权限不足的提示
+
                 .and()
                 .formLogin() //from表单方式
                 .loginPage("/login")//指定登录页是”/login”
@@ -45,8 +46,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login ") //退出登录后的默认网址是”/login”
-                .permitAll();
-//                .invalidateHttpSession(true);
+                .permitAll()
+                .and()
+                .sessionManagement()
+                .maximumSessions(1)
+                .expiredUrl("/login?error");
+
+
+
 //                .and().rememberMe()//登录后记住用户，下次自动登录,数据库中必须存在名为persistent_logins的表
 //                .tokenValiditySeconds(60 * 60 * 24 * 7);
 //        http.sessionManagement()
@@ -54,7 +61,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 //                .maxSessionsPreventsLogin(true)
 //                .sessionRegistry(sessionRegistry);
 
-        /**除了authenticated()方法和permitAll()方法外,还有一些其他方法用来定义该如何保护请求.
+        /**
+         * https://www.cnblogs.com/davidwang456/p/4549344.html
+         除了authenticated()方法和permitAll()方法外,还有一些其他方法用来定义该如何保护请求.
          access(String) 如果给定的SpEL表达式计算结果为true，就允许访问
          anonymous() 允许匿名用户访问
          authenticated() 允许认证的用户进行访问

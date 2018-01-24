@@ -22,10 +22,10 @@ public class UserServiceImpl {
         return "OK";
     }
 
-    public ProviderUser login(String username) {
-        ProviderUser providerUser = userDao.findProviderUserByUsername(username);
-        return providerUser;
-    }
+//    public ProviderUser login(String username) {
+//        ProviderUser providerUser = userDao.findProviderUserByUsername(username);
+//        return providerUser;
+//    }
 
     public String validate(ProviderUser providerUser){
         if(providerUser == null){

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Mr_Li on 2017/7/11.
  */
-@Controller
+@RestController
 @Api
 //@RequestMapping("/provider")
 public class UserController {
@@ -27,7 +27,7 @@ public class UserController {
     public String index(@RequestParam Model model) {
         Result rt = new Result("10000", "额外信息", "只对管理员显示", true);
         model.addAttribute("rt", rt);
-        return "/index";
+        return "index";
     }
 
     @PostMapping("/register")

@@ -38,7 +38,7 @@ public class SwaggerConfiguration {
 //                        new ParameterBuilder().name("token").defaultValue("b0cd07096e22ba272d12dc5636c75e97").description("token默认值会失效-新值可以从浏览器本地存储中取").modelRef(new ModelRef("string")).parameterType("header").required(false).build()
 //                );}})
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.juniuo.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.jincin.book.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

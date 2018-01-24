@@ -18,7 +18,7 @@ public class CallController {
         return new RestTemplate();
     }
 
-    @GetMapping("/book/findAll.json")
+    @GetMapping("/book/findAll")
     @ApiOperation(value = "调用Provider",response = Result.class)
     public Result call2(){
         RestTemplate rt = getRTL();

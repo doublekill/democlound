@@ -5,9 +5,9 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient("Provider")
+//@FeignClient("Provider")
 public interface HelloClient {
-        @RequestMapping(value = "/findAll",method = RequestMethod.GET)
-        Result findAll();
-//        Result findOne(@PathVariable(value = "userId") int userId);
+//        @RequestMapping(value = "/findAll",method = RequestMethod.GET)
+//        Result findAll();
+////        Result findOne(@PathVariable(value = "userId") int userId);
 }

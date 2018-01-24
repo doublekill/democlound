@@ -15,7 +15,7 @@ spring:
     show-sql: true #运行时打印SQL语句
     database: mysql
     hibernate:
-      ddl-auto: update
+      ddl-auto: none #update
 #      create每次启动都会删除以前的重新创建，
 
 eureka:

@@ -18,11 +18,12 @@
 <body>
 <h1>玩转spring boot——普通用户页面</h1>
 <h4>
-    <a href="/">来自一条神秘的链接！</a>
+    <a href="/">来自一条神秘的链接！返回首页</a>
 </h4>
 <!--<h1 th:text="'登录用户：' + ${msg.errorInfo}"></h1>-->
 <div class="starter-template">
-    <p class="bg-primary" th:text="普通用户专享很low页面"></p>
+    <h1 th:text="${msg.errorInfo}"></h1>
+    <p class="bg-primary" th:text="尊贵用户专享很low页面"></p>
     <form th:action="@{/logout}" method="post">
         <input type="submit" class="btn btn-primary" value="注销"/>
     </form>

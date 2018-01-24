@@ -9,4 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ProviderFeign {
     @RequestMapping(value = "/findAll",method = RequestMethod.GET)
     Result findAll();
+    @RequestMapping(value = "/call",method = RequestMethod.GET)
+    String call();
 }
