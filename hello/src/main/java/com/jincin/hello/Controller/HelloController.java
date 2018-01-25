@@ -1,9 +1,7 @@
 package com.jincin.hello.Controller;
 
-import com.jincin.hello.FeignClient.HelloClient;
 import com.jincin.hello.util.Result;
 import com.jincin.hello.util.ResultBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -20,9 +18,9 @@ public class HelloController {
         return ResultBuilder.success(userId);
     }
 
-    @PostMapping("/findOne1")
+    @GetMapping(value = "/findOne1")
     public Result addOne(){
-        return ResultBuilder.success("呦西");
+        return ResultBuilder.success("s");
     }
 
 }

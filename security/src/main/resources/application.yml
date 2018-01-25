@@ -4,7 +4,7 @@ server:
     timeout: 5
 spring:
   application:
-    name: safe
+    name: api
   thymeleaf:
     cache: false
   datasource:
@@ -18,3 +18,22 @@ spring:
     database: mysql
     hibernate:
       ddl-auto: update #create
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 1 #租期更新时间间隔
+    leaseExpirationDurationInSeconds: 1 #租期到期时间
+  client:
+    service-url:
+      defaultZone: http://master:2018/eureka/
+zuul:
+  routes:
+    provider:
+      path: /v1/**
+      service-id: provider
+#    host:
+#      connect-timeout-millis: 6000
+#      socket-timeout-millis: 6000
+#    ribbon:
+#      ReadTimeout: 60000
+#      ConnectTimeout: 60000

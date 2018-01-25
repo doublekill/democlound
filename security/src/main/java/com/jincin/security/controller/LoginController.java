@@ -41,6 +41,7 @@ public class LoginController {
     }
 
 
+
     //    List<SessionInformation> sessionInformations = sessionRegistry
 //            .getAllSessions(SecurityContextHolder.getContext().getAuthentication()
 //                    .getPrincipal(), false);

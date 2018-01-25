@@ -11,7 +11,6 @@ import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Bean
@@ -33,11 +32,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override   /**定义安全策略*/
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/*.css").permitAll()
-                .antMatchers("/hello").hasRole("ADMIN")
-                .antMatchers("/*").authenticated()
-                //登陆后之后拥有“ADMIN”权限才可以访问/hello ，否则系统会出现“403”权限不足的提示
-
+                .antMatchers("/css/*.css").permitAll()
+                .antMatchers("/hello","/aaa/s").hasRole("ADMIN")//登陆后之后拥有“ADMIN”权限才可以访问/hello ，否则系统会出现“403”权限不足的提示
+                .antMatchers("/**").authenticated()
                 .and()
                 .formLogin() //from表单方式
                 .loginPage("/login")//指定登录页是”/login”
@@ -53,6 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .expiredUrl("/login?error");
 
 
+//        http.csrf().disable();
 
 //                .and().rememberMe()//登录后记住用户，下次自动登录,数据库中必须存在名为persistent_logins的表
 //                .tokenValiditySeconds(60 * 60 * 24 * 7);
