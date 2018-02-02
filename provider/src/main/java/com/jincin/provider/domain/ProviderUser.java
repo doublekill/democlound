@@ -1,4 +1,4 @@
-package com.jincin.domain;
+package com.jincin.provider.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -23,6 +23,14 @@ public class ProviderUser {
     private String phone;
     @ApiModelProperty(value = "住址")
     private String adress;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
     public long getId() {
         return Id;

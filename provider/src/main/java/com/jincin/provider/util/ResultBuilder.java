@@ -1,4 +1,4 @@
-package com.jincin.util;
+package com.jincin.provider.util;
 
 /**
  * Created by wang on 2017/5/23.

@@ -1,4 +1,4 @@
-package com.jincin.util;
+package com.jincin.provider.util;
 
 import java.lang.reflect.Field;
 import java.util.Map;

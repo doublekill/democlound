@@ -1,7 +1,17 @@
 server:
-  port: 8888
+  port: 8844
   session:
     timeout: 5
+
+zuul:
+  routes:
+    provider:
+      path: /v1/**
+      service-id: provider
+      sensitiveHeaders: "*"
+    host:
+      connect-timeout-millis: 6000
+      socket-timeout-millis: 6000
 spring:
   application:
     name: api
@@ -17,7 +27,7 @@ spring:
     show-sql: true #运行时打印SQL语句
     database: mysql
     hibernate:
-      ddl-auto: update #create
+      ddl-auto: none
 eureka:
   instance:
     hostname: localhost
@@ -26,14 +36,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://master:2018/eureka/
-zuul:
-  routes:
-    provider:
-      path: /v1/**
-      service-id: provider
-#    host:
-#      connect-timeout-millis: 6000
-#      socket-timeout-millis: 6000
+
+
 #    ribbon:
 #      ReadTimeout: 60000
 #      ConnectTimeout: 60000

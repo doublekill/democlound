@@ -1,10 +1,14 @@
 package com.jincin.security.controller;
 
 import com.jincin.security.domain.Result;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
@@ -24,8 +28,7 @@ public class LoginController {
     public String hello(Model model) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         String role = SecurityContextHolder.getContext().getAuthentication().getAuthorities().toString();
-        Result msg = new Result("测试",role+",","你好，尊敬的"+role+
-                "，这条消息只有充钱的vip才能看到噢"+username,true);
+        Result msg = new Result("测试",role+",","你好，尊敬的"+username,true);
         model.addAttribute("msg", msg);
         return "hello";
     }
@@ -37,6 +40,9 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String login() {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        HttpSession session = httpServletRequest.getSession();
+//        session.setAttribute("authorities", authentication.getAuthorities());
         return "login";
     }
 

@@ -1,6 +1,6 @@
-package com.jincin.dao;
+package com.jincin.provider.dao;
 
-import com.jincin.domain.ProviderUser;
+import com.jincin.provider.domain.ProviderUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserDao extends JpaRepository<ProviderUser,Integer> {
-//    @Query("select username,password from ProviderUser where username=:username and password=:password")
-//    boolean login(@Param("username") String name,@Param("password") String password);
-//    ProviderUser findProviderUserByUsername(String username);
+//    @Query("select username,password from ProviderUser where username=:username")
+//    ProviderUser findByUsername(@Param(value = "username") String username);
+
 }

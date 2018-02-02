@@ -9,7 +9,6 @@
         <module name="book" />
         <module name="center-service" />
         <module name="center-service-backup" />
-        <module name="democlound" />
         <module name="hello" />
         <module name="provider" />
         <module name="provider-service" />
@@ -20,11 +19,12 @@
       <module name="book" target="1.8" />
       <module name="center-service" target="1.8" />
       <module name="center-service-backup" target="1.8" />
-      <module name="democlound" target="1.5" />
+      <module name="democlound" target="1.8" />
       <module name="hello" target="1.8" />
       <module name="provider" target="1.8" />
       <module name="provider-service" target="1.8" />
       <module name="security" target="1.8" />
+      <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
