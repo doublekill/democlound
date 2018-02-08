@@ -1,4 +1,4 @@
-package com.jincin.provider.Exception;
+package com.jincin.provider.exception;
 
 /**
  * 系统逻辑异常

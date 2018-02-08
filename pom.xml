@@ -12,6 +12,7 @@
     <modules>
         <module>security</module>
         <module>provider</module>
+        <module>commons</module>
     </modules>
 
     <parent>

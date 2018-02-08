@@ -14,7 +14,7 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 
 
 @Configuration
-@EnableGlobalMethodSecurity(securedEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     CustomUserService customUserService;
@@ -26,9 +26,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override   /**定义认证用户信息获取来源，密码校验规则等*/
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(customUserService);
-//        auth
-//                .inMemoryAuthentication()
-//                .withUser("user").password("password").roles("USER");
     }
 
     @Override
@@ -40,11 +37,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override   /**定义安全策略*/
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-//                .antMatchers("/css/*.css").permitAll()
-                .antMatchers("/hello").hasRole("ADMIN")//登陆后之后拥有“ADMIN”权限才可以访问/hello ，否则系统会出现“403”权限不足的提示
+                .antMatchers("/hello").hasRole("ADMIN")//登陆后之后拥有“ADMIN”权限才可以访问/hello ，否则系统会出现“403”权限不足的提示s
+//                .antMatchers("/hello").hasRole("USER")
                 .antMatchers("/**").authenticated()
                 .and()
-                .formLogin() //from表单方式
+                .formLogin()
                 .loginPage("/login")//指定登录页是”/login”
                 .permitAll()
 //                .successHandler(loginSuccessHandler()) //登录成功后可使用loginSuccessHandler()存储用户信息，可选。

@@ -37,7 +37,6 @@ eureka:
     service-url:
       defaultZone: http://master:2018/eureka/
 
-
 #    ribbon:
 #      ReadTimeout: 60000
 #      ConnectTimeout: 60000

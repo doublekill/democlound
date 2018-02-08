@@ -1,6 +1,8 @@
 package com.jincin.security.service;
 
+import com.jincin.security.dao.RoleDao;
 import com.jincin.security.dao.UserDao;
+import com.jincin.security.domain.Role;
 import com.jincin.security.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +16,8 @@ import java.util.List;
 public class CustomUserService implements UserDetailsService{//自定义UserDetailsService
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private RoleDao roleDao;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -35,4 +39,19 @@ public class CustomUserService implements UserDetailsService{//自定义UserDeta
         return list;
     }
 
+    public boolean authorized(String username,String permission,String permission1) {
+        Long id = userDao.findByUsername(username).getId();
+        Role role = roleDao.findById(id);
+        String status = role.getRoleStatus();
+        String options = role.getOptions();
+        String[] arr = options.split(",");
+            for (String a : arr) {
+                if (permission1.equals(a)) {
+                    if (permission.equals(status)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+    }
 }

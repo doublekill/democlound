@@ -1,6 +1,6 @@
 package com.jincin.provider.service;
 
-import com.jincin.provider.Exception.LogicException;
+import com.jincin.provider.exception.LogicException;
 import com.jincin.provider.dao.UserDao;
 import com.jincin.provider.domain.ProviderUser;
 import org.springframework.beans.factory.annotation.Autowired;

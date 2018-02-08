@@ -4,14 +4,13 @@ import com.jincin.provider.domain.ProviderUser;
 import com.jincin.provider.service.UserServiceImpl;
 import com.jincin.provider.util.Result;
 import com.jincin.provider.util.ResultBuilder;
-import com.jincin.security.controller.RoleController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -58,10 +57,9 @@ public class UserController {
         return ResultBuilder.success(res);
     }
     @GetMapping(value = "/getP")
-    @Secured("ROLE_SEL")
+
     @ApiOperation(value = "查找",notes = "根据username查找一个user")
-    public Result getP(@RequestParam(required = true) String username){
-        new RoleController().getUser();
+    public Result getP(@RequestParam(required = true) String username, HttpServletRequest request){
 //        HttpSession session = httpServletRequest.getSession();
 //        List<String> list = (List<String>)session.getAttribute("authorities");
 //        for (String a : list){
@@ -71,6 +69,7 @@ public class UserController {
 //                throw new LogicException("10001","没有操作权限");
 //            }
 //        }
+
         String password = userServiceImpl.getPassword(username);
         return ResultBuilder.success(password);
     }

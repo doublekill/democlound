@@ -8,14 +8,23 @@ import javax.persistence.Id;
 public class Role {
     @Id
     @GeneratedValue
-    private long Id;
+    private Long Id;
     private String RoleStatus;
+    private String Options;
 
-    public long getId() {
+    public String getOptions() {
+        return Options;
+    }
+
+    public void setOptions(String options) {
+        Options = options;
+    }
+
+    public Long getId() {
         return Id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         Id = id;
     }
 

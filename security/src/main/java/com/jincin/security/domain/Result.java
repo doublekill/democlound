@@ -1,6 +1,5 @@
 package com.jincin.security.domain;
 
-import javax.persistence.Entity;
 import java.lang.reflect.Field;
 import java.util.Map;
 
