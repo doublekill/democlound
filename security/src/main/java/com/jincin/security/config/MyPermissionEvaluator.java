@@ -22,6 +22,6 @@ public class MyPermissionEvaluator implements PermissionEvaluator {
 
     @Override
     public boolean hasPermission(Authentication authentication, Serializable serializable, String s, Object o) {
-        return false;
+        return true;
     }
 }

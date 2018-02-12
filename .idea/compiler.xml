@@ -24,9 +24,7 @@
       <module name="democlound" target="1.8" />
       <module name="hello" target="1.8" />
       <module name="provider" target="1.8" />
-      <module name="provider-service" target="1.8" />
       <module name="security" target="1.8" />
-      <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

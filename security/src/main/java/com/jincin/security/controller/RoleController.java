@@ -15,7 +15,7 @@ public class RoleController {
     private CustomUserService customUserService;
 
     @GetMapping(value = "/getUser")
-    @PreAuthorize("authenticated and hasPermission('ROLE_ADMIN', 'ROLE_SEL')")
+    @PreAuthorize("authenticated and hasPermission('ROLE_USER', 'ROLE_SEL')")
     public List<User> getUser(){
         return customUserService.getUser();
     }
